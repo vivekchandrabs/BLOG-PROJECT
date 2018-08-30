@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BLOG POST</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="container">
+			<h1>MY BLOG</h1>
+			<hr>
+			{% for po in post %}
+				<div class="card" style="width: 18rem;">
+					{# <img class="card-img-top" src=".../100px180/" alt="Card image cap"> #}
+					<div class="card-body">
+						<h5 class="card-title"> {{po.title}} </h5>
+						<p class="card-text">{{po.body|truncatechars:20}}</p>
+						<a href="/post/{{po.id}}/" class="btn btn-primary">read more</a>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</body>
+</html>
